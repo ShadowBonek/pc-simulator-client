@@ -1,0 +1,238 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.slider {
+  position: relative;
+  width: 99%;
+}
+
+.slider__track,
+.slider__range,
+.slider__left-value,
+.slider__right-value {
+  position: absolute;
+  font-family: "Roboto 300";
+}
+
+.slider__track,
+.slider__range {
+  border-radius: 1vw;
+  height: 1.5vw;
+}
+
+.slider__track {
+  background-color: #ced4da;
+  width: 100%;
+  z-index: 1;
+}
+
+.slider__range {
+  background-color: #5100ff;
+  z-index: 2;
+}
+
+.slider__left-value,
+.slider__right-value {
+  color: #a0a0a0;
+  font-size: 3.5vw;
+  top: 5vw;
+}
+.slider__title {
+  width: 20vw;
+  color: #a0a0a0;
+  font-size: 3.5vw;
+  top: -7vw;
+  left: calc(50% - 10vw);
+  position: absolute;
+
+  text-align: center;
+  line-height: 5vw;
+  color: #909090;
+  font-family: "Roboto 300";
+  font-size: 4vw;
+}
+
+.slider__left-value {
+  left: 2vw;
+}
+
+.slider__right-value {
+  right: 2vw;
+}
+
+.thumb,
+.thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.thumb {
+  pointer-events: none;
+  position: absolute;
+  height: 0;
+  width: 99%;
+  outline: none;
+}
+
+.thumb--zindex-3 {
+  z-index: 3;
+}
+
+.thumb--zindex-4 {
+  z-index: 4;
+}
+
+.thumb--zindex-5 {
+  z-index: 5;
+}
+
+.thumb::-webkit-slider-thumb {
+  background-color: #f1f5f7;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0.0625rem 0.0625rem #ced4da;
+  cursor: pointer;
+  height: 5vw;
+  width: 5vw;
+  margin-top: 2vw;
+  pointer-events: all;
+  position: relative;
+}
+
+.thumb::-moz-range-thumb {
+  background-color: #f1f5f7;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0.0625rem 0.0625rem #ced4da;
+  cursor: pointer;
+  height: 5vw;
+  width: 5vw;
+  margin-top: 2vw;
+  pointer-events: all;
+  position: relative;
+}
+
+@media only screen and (min-width: 568px) {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* background-color: red; */
+  }
+
+  .slider {
+    position: relative;
+    width: 99%;
+  }
+
+  .slider__track,
+  .slider__range,
+  .slider__left-value,
+  .slider__right-value {
+    position: absolute;
+    font-family: "Roboto 300";
+  }
+
+  .slider__track,
+  .slider__range {
+    border-radius: 0.3vw;
+    height: 0.5vw;
+  }
+
+  .slider__track {
+    background-color: #ced4da;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .slider__range {
+    background-color: #5100ff;
+    z-index: 2;
+  }
+
+  .slider__left-value,
+  .slider__right-value {
+    color: #a0a0a0;
+    font-size: 1vw;
+    top: 1.5vw;
+  }
+  .slider__title {
+    width: 10vw;
+    top: -2vw;
+    left: calc(50% - 5vw);
+    position: absolute;
+    text-align: center;
+    line-height: 1vw;
+    color: #909090;
+    font-family: "Roboto 300";
+    font-size: 1vw;
+  }
+
+  .slider__left-value {
+    left: 0.5vw;
+  }
+
+  .slider__right-value {
+    right: 0.5vw;
+  }
+
+  /* Removing the default appearance */
+  .thumb,
+  .thumb::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .thumb {
+    pointer-events: none;
+    position: absolute;
+    height: 0;
+    width: 99%;
+    outline: none;
+  }
+
+  .thumb--zindex-3 {
+    z-index: 3;
+  }
+
+  .thumb--zindex-4 {
+    z-index: 4;
+  }
+
+  .thumb--zindex-5 {
+    z-index: 5;
+  }
+
+  /* For Chrome browsers */
+  .thumb::-webkit-slider-thumb {
+    background-color: #f1f5f7;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 0.0625rem 0.0625rem #ced4da;
+    cursor: pointer;
+    height: 2vw;
+    width: 2vw;
+    margin-top: 0.5vw;
+    pointer-events: all;
+    position: relative;
+  }
+
+  /* For Firefox browsers */
+  .thumb::-moz-range-thumb {
+    background-color: #f1f5f7;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 0.0625rem 0.0625rem #ced4da;
+    cursor: pointer;
+    height: 2vw;
+    width: 2vw;
+    margin-top: 0.5vw;
+    pointer-events: all;
+    position: relative;
+  }
+}
