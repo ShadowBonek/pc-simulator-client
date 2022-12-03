@@ -8,6 +8,7 @@ import Spinner from "../atoms/Spinner";
 import { useNavigate } from "react-router-dom";
 import { IoChevronBackOutline } from "react-icons/io5";
 import { deleteCompare } from "redux/actions/appAction";
+import { translatorClient } from "libs/translatorClient";
 const CompareSt = styled.div`
   position: fixed;
   width: 100%;
@@ -35,7 +36,7 @@ const CompareSt = styled.div`
       color: white;
       font-family: "Roboto 900";
       font-size: 5vw;
-      text-transform: uppercase;
+      /* text-transform: uppercase; */
       margin-left: 1vw;
       // !Dots ...
       overflow: hidden;
@@ -116,7 +117,7 @@ const CompareSt = styled.div`
           border-bottom: 0.1vw solid #242424;
           .compare-cell-label {
             font-family: "Roboto 300";
-            text-transform: capitalize;
+            /* text-transform: capitalize; */
             color: #a0a0a0;
             font-size: 3vw;
           }
@@ -373,7 +374,7 @@ const Compare = (props: props) => {
                 .map((z, index) => (
                   <div className="cell-compare-details" key={index}>
                     <div className="compare-cell-label">
-                      {z === "price" ? `${z.replace(/_/g, " ")}` : z === "power" ? "consumption" : z.replace(/_/g, " ")}
+                      {z === "price" ? 'Precio' : z === "power" ? "Consumo" : translatorClient(z)}
                       :
                     </div>
                     <div

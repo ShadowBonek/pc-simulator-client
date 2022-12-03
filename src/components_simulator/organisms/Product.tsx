@@ -475,7 +475,7 @@ const Product = () => {
         }}
       >
         <div className="numberStateQuantity">x{state.quantity}</div>
-        <div className="title-icon-product">Quantity</div>
+        <div className="title-icon-product">Cantidad</div>
       </div>
 {/* 
       {data.imageM.length > 1 && (
@@ -499,7 +499,7 @@ const Product = () => {
         }}
       >
         <MdModeEditOutline className="sysIconActionProduct" />
-        <div className="title-icon-product">Edit</div>
+        <div className="title-icon-product">Editar</div>
       </div>
 
       <div
@@ -507,12 +507,12 @@ const Product = () => {
         onClick={() => handleCompare(data.model)}
       >
         <IoGitCompareSharp className="sysIconActionProduct" />
-        <div className="title-icon-product">Compare</div>
+        <div className="title-icon-product">Comparar</div>
       </div>
 
       <div className="product-button-icon-title add-icon" onClick={handlePayload}>
         <HiViewGridAdd className="sysIconActionProduct" />
-        <div className="title-icon-product">Add</div>
+        <div className="title-icon-product">Agregar</div>
       </div>
 
       {editStateModal && (

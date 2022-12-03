@@ -180,7 +180,7 @@ const Dashboard = (props: props) => {
             alt=""
           />
           <button className="button-delete-compare " onClick={() => handleDeleteCompare(i.id)}>
-            Delete
+            Borrar
           </button>
         </div>
       ))}
@@ -210,7 +210,7 @@ const Dashboard = (props: props) => {
           }
         }}
       >
-        COMPARE: {app.compare.length}
+        COMPARAR: {app.compare.length}
       </div>
     </DasboardSt>
   );

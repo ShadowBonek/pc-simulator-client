@@ -76,7 +76,7 @@ export const FilterSt = styled.div`
             color: #909090;
             font-family: "Roboto 300";
             font-size: 4vw;
-            text-transform: capitalize;
+            /* text-transform: capitalize; */
             text-align: start;
           }
           .number {
@@ -105,7 +105,7 @@ export const FilterSt = styled.div`
           color: #909090;
           font-family: "Roboto 300";
           font-size: 4vw;
-          text-transform: capitalize;
+          /* text-transform: capitalize; */
           padding-left: 1vw;
         }
         .select {

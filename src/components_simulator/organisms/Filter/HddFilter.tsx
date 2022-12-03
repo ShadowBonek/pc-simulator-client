@@ -1,4 +1,5 @@
 import { componentSelectedTemplate } from "json/ComponentSelectedTemplate";
+import { translatorClient } from "libs/translatorClient";
 import React, { useEffect, useState } from "react";
 import { IoChevronBackOutline } from "react-icons/io5";
 import { Navigate, useNavigate } from "react-router-dom";
@@ -83,7 +84,7 @@ const Filter = (props: props) => {
       <form className="form" onSubmit={handlerSubmit}>
         <div className="header">
           <IoChevronBackOutline className="sysIconBack" onClick={() => navigate(-1)} />
-          <p>Filters</p>
+          <p>Filtros</p>
           <p
             className="reset"
             onClick={() => {
@@ -94,29 +95,29 @@ const Filter = (props: props) => {
               });
             }}
           >
-            Reset
+            Resetar
           </p>
         </div>
 
         <div className="container-scrollable">
           <div className="input-container-price">
             <section className="price-range-element">
-              <label className="label">Price Min</label>
+              <label className="label">Precio Mínimo</label>
               <input
                 className="number"
                 type="number"
-                placeholder="Minimum"
+                placeholder="Mínimo"
                 onChange={(e) => setState({ ...state, gte: e.currentTarget.value })}
                 value={state.gte === 0 ? "" : state.gte}
                 onFocus={(e) => e.currentTarget.select()}
               />
             </section>
             <section className="price-range-element">
-              <label className="label">Price Max</label>
+              <label className="label">Precio Máximo</label>
               <input
                 className="number"
                 type="number"
-                placeholder="Maximum"
+                placeholder="Máximo"
                 onChange={(e) => setState({ ...state, lte: e.currentTarget.value })}
                 value={state.lte === 9999999 ? "" : state.lte}
                 onFocus={(e) => e.currentTarget.select()}
@@ -126,18 +127,18 @@ const Filter = (props: props) => {
 
           {Object.keys(queriesTemplate).map((i: any) => (
             <div className="select-container" key={i}>
-              <label className="label">{i.replace(/_/g, " ")}</label>
+              <label className="label">{translatorClient(i)}</label>
               <select
                 className={`select ${state[i] !== "" ? "border-select" : ""}`}
                 name="manufacturer"
                 onChange={(e) => handleSetState(e, i)}
                 value={state[i]}
-                placeholder="All"
+                placeholder="Todos"
                 // style={state[i] !== "" ? { border: "0.5vw solid #5100FF" } : { border: "none" }}
               >
                 {queriesTemplate[i]?.map((i: any) => (
                   <option value={i} key={i}>
-                    {i === "" ? "All" : i}
+                    {i === "" ? "Todos" : i}
                   </option>
                 ))}
               </select>
@@ -145,7 +146,7 @@ const Filter = (props: props) => {
           ))}
         </div>
 
-        <input className="button-filter" type="submit" value="See Listings" />
+        <input className="button-filter" type="submit" value="Filtrar" />
       </form>
     </FilterSt>
   );

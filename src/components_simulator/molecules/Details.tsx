@@ -1,3 +1,4 @@
+import { translatorClient } from "libs/translatorClient";
 import React from "react";
 import styled from "styled-components";
 const DetailsSt = styled.div`
@@ -19,7 +20,7 @@ const DetailsSt = styled.div`
       width: 100%;
       font-family: "Roboto 300";
       font-size: 3vw;
-      text-transform: capitalize;
+      /* text-transform: capitalize; */
       color: #a0a0a0;
       padding: 0 10vw;
     }
@@ -70,56 +71,44 @@ const Details = (props: props) => {
 
   return (
     <DetailsSt>
-      {" "}
       <div className="detail">
-        <section className="label">Model:</section>{" "}
+        <section className="label">Modelo:</section>{" "}
         <section className="contain">
           {props.manufaturer?.toUpperCase()} {props.model}
         </section>
       </div>
       {props.objectKeys.sort().map((i: any) => (
         <div className="detail" key={i}>
-          <section className="label">{i === 'power' ? "Consumption" : i.replace(/_/g, " ")}:</section>{" "}
+          <section className="label">
+            {i === "power" ? "Consumo" : translatorClient(i)}
+            :
+          </section>{" "}
           <section className="contain">
-            {
-              //     i === "launch_date"
-              //       ? new Date(props.state[i]).toLocaleDateString("en-US", options)
-              //       :
-
-              i === "height"
-                ? `${props.state[i]} mm`
-                : i === "length"
-                ? `${props.state[i]} mm`
-                : i === "width"
-                ? `${props.state[i]} mm`
-                : i === "read"
-                ? `${props.state[i]} MB/s`
-                : i === "write"
-                ? `${props.state[i]} MB/s`
-                : i === "MTBF"
-                ? `${props.state[i]} Million Hours`
-                // : i === "memory"
-                // ? `${props.state[i]} Gb`
-                // : i === "memory_size"
-                // ? `${props.state[i]} Gb`
-                : i === "memory_speed_max"
-                ? `${props.state[i]} MHz`
-                : i === "speed"
-                ? `${props.state[i]} MHz`
-                : i === "boost_clock"
-                ? `${props.state[i]} MHz`
-                // : i === "cache"
-                // ? `${props.state[i]} MB`
-                : i === "power"
-                ? `${props.state[i]} W`
-                : // : props.state[i] === 0
-                // ? `No data`
-                i === "fans_size"
-                ? `${props.state[i]} mm`
-                : i === "gpu_boost_clock"
-                ? `${props.state[i]} MHz`
-                : props.state[i]
-            }
+            {i === "height"
+              ? `${props.state[i]} mm`
+              : i === "length"
+              ? `${props.state[i]} mm`
+              : i === "width"
+              ? `${props.state[i]} mm`
+              : i === "read"
+              ? `${props.state[i]} MB/s`
+              : i === "write"
+              ? `${props.state[i]} MB/s`
+              : i === "MTBF"
+              ? `${props.state[i]} Million Hours`
+              : i === "memory_speed_max"
+              ? `${props.state[i]} MHz`
+              : i === "speed"
+              ? `${props.state[i]} MHz`
+              : i === "boost_clock"
+              ? `${props.state[i]} MHz`
+              : i === "power"
+              ? `${props.state[i]} W`
+              : i === "fans_size"
+              ? `${props.state[i]} mm`
+              : i === "gpu_boost_clock"
+              ? `${props.state[i]} MHz`
+              : props.state[i]}
           </section>
         </div>
       ))}

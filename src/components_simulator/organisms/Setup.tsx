@@ -60,7 +60,11 @@ const Setup = () => {
   //   console.log(state);
 
   //! CPU Alerts
-  if (state.cpu.socket !== state.mobo.socket && state.cpu.socket !== "" && state.mobo.socket !== "") {
+  if (
+    state.cpu.socket !== state.mobo.socket &&
+    state.cpu.socket !== "" &&
+    state.mobo.socket !== ""
+  ) {
     state.cpu.error = "incompatible";
     state.cpu.warning = "El socket puede no ser compatible con la placa madre";
   } else {
@@ -69,7 +73,10 @@ const Setup = () => {
   }
 
   if (state.cpu.model !== "cpu") {
-    if (state.cpu.stock_cooler.toLowerCase() === "no" && state.cooler.model === "cooler") {
+    if (
+      state.cpu.stock_cooler.toLowerCase() === "no" &&
+      state.cooler.model === "cooler"
+    ) {
       state.cooler.error = "incompatible";
       state.cooler.warning = `Cooler requerido`;
     } else {
@@ -82,14 +89,22 @@ const Setup = () => {
   }
 
   //! MOBO Alerts
-  if (state.mobo.socket !== state.cpu.socket && state.mobo.socket !== "" && state.cpu.socket !== "") {
+  if (
+    state.mobo.socket !== state.cpu.socket &&
+    state.mobo.socket !== "" &&
+    state.cpu.socket !== ""
+  ) {
     state.mobo.error = "incompatible";
     state.mobo.warning = "El socket puede no ser compatible con la CPU";
   } else {
     state.mobo.error = "";
   }
   //   //! RAM Alerts
-  if (state.ram.ram_type !== state.mobo.ram_type && state.mobo.ram_type !== "" && state.ram.ram_type !== "") {
+  if (
+    state.ram.ram_type !== state.mobo.ram_type &&
+    state.mobo.ram_type !== "" &&
+    state.ram.ram_type !== ""
+  ) {
     state.ram.error = "incompatible";
     state.ram.warning = `Ram: ${state.ram.ram_type}
        MotherBoard: ${state.mobo.ram_type}`;
@@ -147,40 +162,52 @@ const Setup = () => {
       return updatedSum;
     }, 0);
 
-  if (state.power.wattage < parseInt(totalPower) + 75 && state.power.wattage !== "") {
+  if (
+    state.power.wattage < parseInt(totalPower) + 75 &&
+    state.power.wattage !== ""
+  ) {
     state.power.error = "incompatible";
     state.power.warning = `PSU recomendado: ${
-      psuFunction(totalPower + 75) > 1600 ? "1600+" : psuFunction(totalPower + 75)
+      psuFunction(totalPower + 75) > 1600
+        ? "1600+"
+        : psuFunction(totalPower + 75)
     } W
      `;
   } else {
     state.power.error = "";
   }
   //! CASE Alerts
-  if (state.case.length - 100 < state.gpu.length && state.case.length !== 0) {
+  if (
+    state.case.length - 100 < state.gpu.length &&
+    state.case.length !== 0 &&
+    state.gpu.model !== "gpu"
+  ) {
     state.case.error = "incompatible";
     state.case.warning = `Es posible que la tarjeta de video no quepa en el case.`;
   } else {
     state.case.error = "";
   }
+
   //! COOLER Alerts
-    const parseSocket = (socket: string, manufacturer: string) => {
-      switch (true) {
-        case manufacturer.toLocaleLowerCase() === "intel":
-          return socket.replace(/[^\d.-]/g, "");
-        case manufacturer.toLocaleLowerCase() === "amd":
-          return socket;
-        default:
-          return socket;
-      }
-    };
-    if (
-      state.cooler.model !== "cooler" &&
-      !state.cooler.compatibility.includes(parseSocket(state.cpu.socket, state.cpu.manufacturer))
-    ) {
-      state.cooler.error = "incompatible";
-      state.cooler.warning = `Tal vez el cooler no sea compatible`;
+  const parseSocket = (socket: string, manufacturer: string) => {
+    switch (true) {
+      case manufacturer.toLocaleLowerCase() === "intel":
+        return socket.replace(/[^\d.-]/g, "");
+      case manufacturer.toLocaleLowerCase() === "amd":
+        return socket;
+      default:
+        return socket;
     }
+  };
+  if (
+    state.cooler.model !== "cooler" &&
+    !state.cooler.compatibility.includes(
+      parseSocket(state.cpu.socket, state.cpu.manufacturer)
+    )
+  ) {
+    state.cooler.error = "incompatible";
+    state.cooler.warning = `Tal vez el cooler no sea compatible`;
+  }
 
   // !USE EFFECT
   useEffect(() => {

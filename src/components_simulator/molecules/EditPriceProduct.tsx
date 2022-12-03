@@ -194,7 +194,7 @@ const EditPriceProduct = (props: props) => {
   return (
     <EditPriceSt>
       <form className="inputs-container-edit-price" onSubmit={handleSubmit}>
-        <h1 className="title-edit-price">Edit Quantity</h1>
+        <h1 className="title-edit-price">Editar Cantidad</h1>
         {/* <div className="inpunt-change price">
           <label className="label">Price (MSRP)</label>
           <section className="input-icon-container">
@@ -214,7 +214,7 @@ const EditPriceProduct = (props: props) => {
         </div> */}
 
         <div className="inpunt-change quantity">
-          <label className="label">Quantity</label>
+          <label className="label">Cantidad</label>
           <section className="input-icon-container">
             <input
               name="quantity"
@@ -230,9 +230,9 @@ const EditPriceProduct = (props: props) => {
           </section>
         </div>
         <div className="buttons-edit-price">
-          <button type="submit">Changue</button>
+          <button type="submit">Cambiar</button>
           <button type="button" onClick={() => navigate(-1)}>
-            Cancel
+            Cancelar
           </button>
         </div>
       </form>
