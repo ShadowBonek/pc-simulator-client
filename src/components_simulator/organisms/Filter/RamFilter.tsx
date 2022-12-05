@@ -97,7 +97,7 @@ const Filter = (props: props) => {
               //       });
             }}
           >
-            Resetar
+            Resetear
           </p>
         </div>
 

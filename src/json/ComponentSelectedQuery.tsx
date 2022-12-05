@@ -3,7 +3,7 @@ export const componentSelectedQuery: any = {
   cpu: {
     manufacturer: ["", "amd", "intel"],
     socket: ["", "lga1700", "am4"],
-    integrated_graphics: ["", "Yes", "No"],
+    integrated_graphics: ["", "Si", "No"],
   },
   //!MOBO
   mobo: {
@@ -46,7 +46,7 @@ export const componentSelectedQuery: any = {
   case: {
     manufacturer: ["", "Corsair"],
     form_factor: ["", "SUPER TOWER", "FULL TOWER", "MID TOWER", "SMALL FORM"],
-    PSU: ["", "Yes", "No"],
+    PSU: ["", "Si", "No"],
   },
   //!NVME
   nvme: {

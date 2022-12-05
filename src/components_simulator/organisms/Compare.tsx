@@ -322,7 +322,7 @@ const Compare = (props: props) => {
     <CompareSt>
       <div className="header-compare">
         <IoChevronBackOutline className="sysIconBack" onClick={() => navigate(-1)} />
-        <section className="component-name">Compare</section>
+        <section className="component-name">Comparar</section>
       </div>
 
       <div className="items-compare-container">
@@ -365,7 +365,7 @@ const Compare = (props: props) => {
 
             <div className="details-compare">
               <div className="cell-compare-details" key={index}>
-                <div className="compare-cell-label">Model:</div>
+                <div className="compare-cell-label">Modelo:</div>
                 <div className="compare-cell-data">{i.model}</div>
               </div>
               {Object.keys(i)

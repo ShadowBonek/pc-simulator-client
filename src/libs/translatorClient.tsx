@@ -3,15 +3,15 @@ export const translatorClient = (value: string) => {
     case "MTBF":
       return "Probabilidad de fallo";
     case "capacity":
-      return "capacidad";
+      return "Capacidad";
     case "read":
-      return "lectura";
+      return "Lectura";
     case "write":
-      return "escritura";
+      return "Escritura";
     case "architecture":
-      return "arquitectura";
+      return "Arquitectura";
     case "integrated_graphics":
-      return "gráficos integrados";
+      return "Gráficos integrados";
     case "launch_date":
       return "Fecha de lanzamiento";
     case "number_of_efficient_cores":
@@ -25,7 +25,7 @@ export const translatorClient = (value: string) => {
     case "total_threads":
       return "Hilos totales";
     case "form_factor":
-      return "formato";
+      return "Formato";
     case "memory_type":
       return "Tipo de memoria";
     case "max_memory":
@@ -34,12 +34,38 @@ export const translatorClient = (value: string) => {
       return "Boost clock";
     case "manufacturer":
       return "Fabricante";
+    case "CAS_latency":
+      return "Latencia CAS";
+    case "memory_size":
+      return "Memoria";
+    case "speed":
+      return "Velocidad";
+    case "timing":
+      return "Latencia";
+    case "benchmark":
+      return "Rendimiento";
+    case "gpu_boost_clock":
+      return "GPU Boost Clock";
+    case "memory":
+      return "Memoria";
+    case "efficiency_rating":
+      return "Eficiencia";
+    case "wattage":
+      return "Potencia";
+    case "height":
+      return "Altura";
+    case "width":
+      return "Ancho";
+    case "cooler_type":
+      return "Tipo de Cooler";
+    case "fans":
+      return "Ventiladores";
+    case "fans_size":
+      return "Tamano del Ventilador";
+    case "noise_level":
+      return "Ruido";   
     case "":
-      return "";
-    case "":
-      return "";
-    case "":
-      return "";
+      return "";   
     case "":
       return "";
     case "":

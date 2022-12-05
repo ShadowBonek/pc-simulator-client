@@ -329,7 +329,7 @@ const Product = () => {
   // !Handle COMPARE
   const handleCompare = (model: string) => {
     if (app.compare.find((i: any) => i.model === model)) {
-      toast.error(`The pc component is already added!!`);
+      toast.error(`El componente de pc ya esta agregado!!`);
     } else {
       dispatch(setCompare(state));
     }
